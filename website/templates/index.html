@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Level - Site Clone</title>
+    <style>
+    body {
+        margin: 0;
+        /* Używamy tagu Django, aby odnaleźć plik na dysku */
+        background-image: url("{% static 'website/background.jpg' %}");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
+
+        body {
+            margin: 0;
+            font-family: default: "Script MT Bold;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            background-color: white;
+            border-bottom: 1px solid grey;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-circle {
+            background-color: pink;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        .logo-text {
+            font-size: 49px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .level-icon {
+            border: 1px solid rebeccapurple;
+            border-radius: 5px;
+            padding: 5px 12px;
+            color: green;
+            font-size: 24px;
+
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo-area">
+
+        <div class="logo-circle">🌱</div>
+
+        <span class="logo-text">Level</span>
+    </div>
+
+    <div class="level-icon">
+        ☰
+    </div>
+</nav>
+
+<p>tutaj twoja tresc  </p>
+
+<main style="padding: 20px; display: flex; align-items: center;">
+
+    <div class="search_container" style="width: 100%; max-width: 600px; display: flex; flex-direction: column; align-items: center;">
+
+
+
+        <div class="search" style="width: 100%; border: 1px solid grey; padding: 10px; border-radius: 4px; display: flex; align-items: center;">
+            <input placeholder="type your destination" style="border: none; outline: none; width: 100%; font-size: 16px;">
+        </div>
+
+    </div>
+
+</main>
+
+<table>
+<thead>
+
+
+</thead>
+
+</table>
+</body>
+</html>
