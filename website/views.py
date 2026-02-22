@@ -1,9 +1,22 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'base.html')
 
-# Create your views here.
+
 def menu_page(request):
     return render(request, 'menu.html')
-# function which will make a request
+
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'index.html')
+
+def contact(request):
+    return render(request, 'contacts.html')
+
+def reservations(request):
+    return render(request, 'reservations.html')
+
+def subscribe(request):
+    return render(request, 'subscription.html')

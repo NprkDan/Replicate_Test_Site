@@ -1,120 +1,24 @@
-{% load static %} <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Level - Site Clone</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            /* 2. Poprawny zapis tła w Django */
-            background-image: url("{% static 'website/background.jpg'%}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            min-height: 100vh;
-            /* 3. Poprawny zapis czcionki */
-            font-family: "Nasalization";
-        }
+{% extends 'base.html' %}
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 50px;
-            background-color: white;
-            border-bottom: 1px solid grey;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-circle {
-            background-color: #45505F;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-        }
-
-        .logo-text {
-            font-size: 49px;
-            font-weight: bold;
-            color: black;
-        }
-
-        .level-icon {
-            border: 1px solid rebeccapurple;
-            border-radius: 5px;
-            padding: 5px 12px;
-            color: darkslategrey;
-            font-size: 24px;
-            background-color: white; /* Żeby nie było przezroczyste na tle zdjęcia */
-            cursor: pointer;
-        }
-
-        /* 4. Kontener dla wyszukiwarki, żeby była na środku */
-        .main-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 50vh;
-        }
-    </style>
-</head>
-
-<body>
-
-<nav class="navbar">
-    <div class="logo-area">
-        <div class="logo-circle">🌱</div>
-        <span class="logo-text">Level</span>
-    </div>
-    <div class="level-icon">
-        ☰
-    </div>
-</nav>
-
-<main style="display: flex; flex-direction: column; align-items: center; gap: 1px; margin-top: 50px;">
-
-    <div style="width: 600px; border: 1px solid black; padding: 10px; background-color: white;">
-        <input placeholder="Cel podróży" style="width: 100%; border: none; outline: none;">
-    </div>
-
-    <div style="display: flex; width: 622px; gap: 1px;">
-        <div style="flex: 1; border: 1px solid black; padding: 10px; background-color: white;">
-            <input placeholder="Check in" style="width: 100%; border: none; outline: none;">
-                <p style="background-color; margin: 0px; font-size:2px ; </p>
+{% block content %}
+    <main class="search-container">
+        <div class="input-row" style="width: 600px;">
+            <input type="text" placeholder="Travel Direction">
         </div>
-
-    
-            <input placeholder="Check out" style="width: 100%; border: none; outline: none;">
+        <div class="flex-row">
+            <div class="flex-item">
+                <label style="font-size: 10px; color: gray; display: block;">Check in</label>
+                <input type="date">
+            </div>
+            <div class="flex-item">
+                <label style="font-size: 10px; color: gray; display: block;">Check out</label>
+                <input type="date">
+            </div>
         </div>
-    </div>
-
-    <div style="display: flex; width: 622px; gap: 1px;">
-        <div style="flex: 1; border: 1px solid black; padding: 10px; background-color: white;">
-            <input placeholder="Adults" style="width: 100%; border: none; outline: none;">
+        <div class="flex-row">
+            <div class="flex-item"><input type="number" placeholder="Adults"></div>
+            <div class="flex-item"><input type="number" placeholder="Children"></div>
+            <div class="flex-item"><input type="number" placeholder="Rooms"></div>
         </div>
-        <div style="flex: 1; border: 1px solid black; padding: 10px; background-color: white;">
-            <input placeholder="Children" style="width: 100%; border: none; outline: none;">
-        </div>
-        <div style="flex: 1; border: 1px solid black; padding: 10px; background-color: white;">
-            <input placeholder="Rooms" style="width: 100%; border: none; outline: none;">
-        </div>
-    </div>
-
-
-</main>
-
-</body>
-</html>
+    </main>
+{% endblock %}
