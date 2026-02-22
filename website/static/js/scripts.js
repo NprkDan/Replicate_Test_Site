@@ -1,16 +1,18 @@
+// Czekamy na załadowanie dokumentu
 document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('menu-btn');
     const menu = document.getElementById('nav-menu');
 
     if (btn && menu) {
-        btn.addEventListener('click', () => {
+        // Kliknięcie w przycisk otwiera/zamyka menu
+        btn.onclick = (e) => {
+            e.stopPropagation(); // Zatrzymuje sygnał przed window.onclick
             menu.classList.toggle('menu-visible');
-        });
+        };
 
-        window.addEventListener('click', (e) => {
-            if (!btn.contains(e.target) && !menu.contains(e.target)) {
-                menu.classList.remove('menu-visible');
-            }
-        });
+        // Kliknięcie gdziekolwiek poza menu zamyka je
+        window.onclick = () => {
+            menu.classList.remove('menu-visible');
+        };
     }
 });
